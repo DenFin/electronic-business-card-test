@@ -16,9 +16,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 body, figure{
   margin: 0;
+}
+body {
+  font-family: sans-serif;
 }
 img {
   width: 200px
