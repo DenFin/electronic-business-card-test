@@ -66,6 +66,7 @@ body {
 
 img {
   width: 100%;
+  max-width: 300px;
 }
 
 .employee-container {
