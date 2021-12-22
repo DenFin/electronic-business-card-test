@@ -1,7 +1,7 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'pwa-vk',
+        title: 'Dennis Fink | untype',
         htmlAttrs: {
             lang: 'en'
         },
@@ -28,11 +28,20 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         '@nuxtjs/pwa',
+        '@nuxtjs/google-fonts'
     ],
+    googleFonts: {
+        families: {
+            'Public+Sans': [300, 600]
+        }
+    },
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {}
+    build: {},
+    server: {
+        host: '0' // default: localhost
+    }
 }
