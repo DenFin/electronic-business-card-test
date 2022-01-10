@@ -42,6 +42,18 @@
           <a href="mailto:dennis@untype.agency">dennis@untype.agency</a><br>
           <a href="tel:+491606091990">0160 609 1990</a>
         </div>
+        <div class="">
+          <button
+            @click="startCamera"
+            class="btn"
+          >Kamera</button>
+        </div>
+        <div v-show="cameraStream">
+          <video
+            ref="video"
+            src=""
+          ></video>
+        </div>
       </div>
     </div>
   </div>
@@ -50,6 +62,26 @@
 <script>
 export default {
   name: "IndexPage",
+  data() {
+    return {
+      cameraStream: null,
+      videoSrc: null,
+    };
+  },
+  methods: {
+    async startCamera() {
+      this.cameraStream = await navigator.mediaDevices.getUserMedia({
+        audio: false,
+        video: {
+          facingMode: "environment",
+        },
+      });
+      this.$refs.video.srcObject = this.camerasStream;
+      this.$refs.video.onloadedmetadata = () => {
+        this.ready = true;
+      };
+    },
+  },
 };
 </script>
 
